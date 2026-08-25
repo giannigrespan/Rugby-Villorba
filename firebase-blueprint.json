@@ -1,0 +1,140 @@
+{
+  "entities": {
+    "Athlete": {
+      "title": "Athlete",
+      "description": "An athlete in the system",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "pinHash": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "Coach": {
+      "title": "Coach",
+      "description": "A coach in the system",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "email": { "type": "string" },
+        "pinHash": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "TrainingSession": {
+      "title": "TrainingSession",
+      "description": "A training session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "date"]
+    },
+    "AttendanceRecord": {
+      "title": "AttendanceRecord",
+      "description": "An attendance record",
+      "type": "object",
+      "properties": {
+        "athleteId": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["athleteId", "sessionId", "status"]
+    },
+    "RpeFeedback": {
+      "title": "RpeFeedback",
+      "description": "RPE feedback",
+      "type": "object",
+      "properties": {
+        "athleteId": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "score": { "type": "number" }
+      },
+      "required": ["athleteId", "sessionId", "score"]
+    },
+    "IndividualWorkout": {
+      "title": "IndividualWorkout",
+      "description": "An individual workout",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "athleteId": { "type": "string" }
+      },
+      "required": ["id", "athleteId"]
+    },
+    "KickingLog": {
+      "title": "KickingLog",
+      "description": "A kicking log",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "athleteId": { "type": "string" }
+      },
+      "required": ["id", "athleteId"]
+    },
+    "PhysioNote": {
+      "title": "PhysioNote",
+      "description": "A physio note",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "athleteId": { "type": "string" }
+      },
+      "required": ["id", "athleteId"]
+    },
+    "TrainingTask": {
+      "title": "TrainingTask",
+      "description": "A training task or assignment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "assignedByCoachId": { "type": "string" }
+      },
+      "required": ["id", "title", "assignedByCoachId"]
+    }
+  },
+  "firestore": {
+    "athletes": {
+      "schema": "Athlete",
+      "description": "Collection of athletes"
+    },
+    "coaches": {
+      "schema": "Coach",
+      "description": "Collection of coaches"
+    },
+    "sessions": {
+      "schema": "TrainingSession",
+      "description": "Collection of sessions"
+    },
+    "attendance": {
+      "schema": "AttendanceRecord",
+      "description": "Collection of attendance records"
+    },
+    "rpe": {
+      "schema": "RpeFeedback",
+      "description": "Collection of RPE feedback"
+    },
+    "individualWorkouts": {
+      "schema": "IndividualWorkout",
+      "description": "Collection of individual workouts"
+    },
+    "kickingLogs": {
+      "schema": "KickingLog",
+      "description": "Collection of kicking logs"
+    },
+    "physioNotes": {
+      "schema": "PhysioNote",
+      "description": "Collection of physio notes"
+    },
+    "trainingTasks": {
+      "schema": "TrainingTask",
+      "description": "Collection of training tasks"
+    }
+  }
+}

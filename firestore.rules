@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to verify user is authenticated
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    match /athletes/{athleteId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /coaches/{coachId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /sessions/{sessionId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /attendance/{attendanceId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /rpe/{rpeId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /individualWorkouts/{workoutId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /kickingLogs/{logId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /physioNotes/{noteId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /trainingTasks/{taskId} {
+      allow read, write: if isSignedIn();
+    }
+
+    // Default deny catch-all for any other collections
+    match /{document=**} {
+      allow read, write: if isSignedIn();
+    }
+  }
+}
+

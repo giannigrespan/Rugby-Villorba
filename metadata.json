@@ -1,0 +1,8 @@
+{
+  "name": "Remix Villorba Rugby Femminile WebApp",
+  "description": "App per la gestione delle presenze, RPE, allenamenti individuali e monitoraggio performance per la Serie A Elite del Villorba Rugby Femminile.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
